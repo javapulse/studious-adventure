@@ -21,6 +21,10 @@
 String final = "string"; // invalid statement
 ```
 
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
 
 ## Q. Can we use predefined class name as identifier?
 
@@ -29,6 +33,10 @@ Yes we can use. But it isn't recommended to.
 ```java
 String String = "string";
 ```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
 
 
 ## Q. What are literals?
@@ -41,6 +49,9 @@ String value = "string"; // "string" is a literal.
 
 NOTE: Java provides 3 literals -> null, true, false.
 
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
 
 
 ## # 2. JAVA ARCHITECTURE
