@@ -8,6 +8,7 @@
 * [Introduction](#-1-introduction)
 * [Java Architecture](#-2-java-architecture)
 * [Java Data Types](#-3-java-data-types)
+* [Java OOP](#-4-java-oop)
 
 <br/>
 
@@ -53,7 +54,7 @@ Java Virtual Machine (JVM) is a specification that provides runtime environment 
 The JVM is not platform independent. Java Virtual Machine (JVM) provides the environment to execute the java file(. Class file). So at the end it's depends on kernel and kernel is differ from OS (Operating System) to OS. The JVM is used to both translate the bytecode into the machine language for a particular computer and actually execute the corresponding machine-language instructions as well.
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. What is JIT compiler in Java?
@@ -63,7 +64,7 @@ The Just-In-Time (JIT) compiler is a component of the runtime environment that i
 Java programs consists of classes, which contain platform-neutral bytecodes that can be interpreted by a JVM on many different computer architectures. At run time, the JVM loads the class files, determines the semantics of each individual bytecode, and performs the appropriate computation. The additional processor and memory usage during interpretation means that a Java application performs more slowly than a native application. The JIT compiler helps improve the performance of Java programs by compiling bytecodes into native machine code at run time. The JIT compiler is enabled by default. When a method has been compiled, the JVM calls the compiled code of that method directly instead of interpreting it.
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. What is Classloader in Java?
@@ -85,7 +86,7 @@ It loads classes from the JDK extensions directly usually `JAVA_HOME/lib/ext` di
 It loads application specific classes from the CLASSPATH environment variable. It can be set while invoking program using -cp or classpath command line options.
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. Java Compiler is stored in JDK, JRE or JVM?
@@ -102,12 +103,8 @@ JVM is responsible for converting Byte code to the machine specific code. JVM is
 
 Java Runtime Environment provides a platform to execute java programs. JRE consists of JVM and java binaries and other classes to execute any program successfully.
 
-<p align="center">
-  <img src="assets/jdk.jpg" alt="Java Compiler" width="500px"  />
-</p>
-
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. What is difference between Heap and Stack Memory in java?
@@ -139,7 +136,7 @@ As soon as method ends, the block becomes unused and become available for next m
 |Allocation/Deallocation| This Memory is automatically allocated and deallocated when a method is called and returned respectively|Heap space is allocated when new objects are created and deallocated by Gargabe Collector when they are no longer referenced |
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. How many types of memory areas are allocated by JVM?
@@ -166,7 +163,7 @@ JVM is a program which takes Java bytecode and converts the byte code (line by l
 **6. Native Method Stack**: It contains all the native methods used in the application.
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## # 3. JAVA DATA TYPES
@@ -211,7 +208,7 @@ class UnboxingExample {
 ```
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. What is the difference between transient and volatile variable in Java?
@@ -254,7 +251,7 @@ public class MyRunnable implements Runnable {
 ```
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. What are assertions in Java?
@@ -289,7 +286,7 @@ public class Example {
 ```
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. What is the final variable, final class, and final blank variable?
@@ -394,7 +391,7 @@ class ABC extends XYZ {
 ```
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. What is a compile time constant in Java?
@@ -415,7 +412,7 @@ private final int x = 10;
 ```
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
 ## Q. What are the different access specifiers available in java?
@@ -451,6 +448,86 @@ private final int x = 10;
 ```
 
 <div align="right">
-    <b><a href="#related-topics">↥ back to top</a></b>
+    <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
+
+## # 4. JAVA OOP
+
+<br/>
+
+## Q. Can a class or a method be abstract and final at the same time?
+
+A class or method cannot be abstract and final at the same time.
+- `final` restricts the component to be modified further.
+- `abstract` make component available to be modified further.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+
+## Q. When are static variables loaded in memory?
+
+Static variables are loaded in memory at the time of class loading.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+
+## Q. Can we declare final variable without initialization?
+
+We can declare `final` variable without initialization.
+
+```java
+private final int blankFinal;
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+
+## Q. What is difference between abstract class and interface?
+
+- In abstract class, we can have both abstract and concrete methods where as in interface, we can only have abstract methods.
+- We can extend only one abstract class at a time. We can implement any number of interfaces at a time.
+- Abstract class can have `static`, `final` or `static final` variables with any access specifier where as in interface, we can have only `static final` variable by default.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+
+## Q. What are the various types of inheritance?
+
+1. Single Inheritance: a single class extends another class.
+
+```java
+class A {}
+class B extends A {}
+```
+
+2. Multilevel Inheritance: in this case, there are multiple level of inheritance.
+
+```java
+class A {}
+class B extends A {}
+class C extends B {}
+```
+
+3. Multiple Inheritance: a single class extends more than 1 class. Java does not support this type of inheritance, because if a class extends more than one class then change of ambiguity problem if there is any method present with same name.
+However multiple inheritance is possible with interfaces.
+
+4. Hierarchical Inheritance: 
+
+```java
+class A {}
+class B extends A {}
+class C extends A {}
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
