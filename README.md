@@ -480,7 +480,7 @@ A class or method cannot be abstract and final at the same time.
 
 ## Q. When are static variables loaded in memory?
 
-Static variables are loaded in memory at the time of class loading.
+Static variables are loaded in memory at the time of class loading. When the JVM loads a class, it allocates memory for all of the static variables defined in the class and initializes them to their default values (which are 0, false, or null, depending on the data type).
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -489,10 +489,11 @@ Static variables are loaded in memory at the time of class loading.
 
 ## Q. Can we declare final variable without initialization?
 
-We can declare `final` variable without initialization.
+No, it's not possible to declare a final variable without initializing it in the same statement.
+[Java Language Specification 8.3.1.2](https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.2)
 
 ```java
-private final int blankFinal;
+private final int blankFinal; // this will cause a compile-time error
 ```
 
 <div align="right">
@@ -503,8 +504,28 @@ private final int blankFinal;
 ## Q. What is difference between abstract class and interface?
 
 - In abstract class, we can have both abstract and concrete methods where as in interface, we can only have abstract methods.
-- We can extend only one abstract class at a time. We can implement any number of interfaces at a time.
+- A class can only extend one abstract class, but it can implement multiple interfaces.
 - Abstract class can have `static`, `final` or `static final` variables with any access specifier where as in interface, we can have only `static final` variable by default.
+
+```java
+public abstract class Shape {
+    protected int x;
+    protected int y;
+    
+    public Shape(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    
+    public abstract double area();
+}
+
+
+public interface Drawable {
+    void draw();
+    void setColor(String color);
+}
+```
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -537,6 +558,68 @@ However multiple inheritance is possible with interfaces.
 class A {}
 class B extends A {}
 class C extends A {}
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+
+## Q. What is Diamond Problem in inheritance?
+
+If a class extends two classes, change of ambiguity problem. This is called as Diamond Access problem.
+
+```java
+interface A {
+    default void foo() {
+        System.out.println("A's foo");
+    }
+}
+
+interface B extends A {
+    default void foo() {
+        System.out.println("B's foo");
+    }
+}
+
+interface C extends A {
+    default void foo() {
+        System.out.println("C's foo");
+    }
+}
+
+class D implements B, C {
+    public void test() {
+        foo(); // which implementation of foo() should be called here?
+    }
+}
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+
+## Q. Can we Overload or Override static methods in java ?
+
+Yes we can overload static methods but we cannot override. 
+
+** static method calls are resolved at compile time. Overriding is a feature of OOP languages like Java that is related to run-time polymorphism.
+
+```java
+public class Example {
+    public static void foo() {
+        System.out.println("Test.foo() called ");
+    }
+    public static void foo(int a) {
+        System.out.println("Test.foo(int) called ");
+    }
+    public static void main(String args[])
+    {
+        Example.foo();
+        Example.foo(10);
+    }
+}
 ```
 
 <div align="right">
