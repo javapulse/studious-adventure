@@ -534,14 +534,14 @@ public interface Drawable {
 
 ## Q. What are the various types of inheritance?
 
-1. Single Inheritance: a single class extends another class.
+- Single Inheritance: a single class extends another class.
 
 ```java
 class A {}
 class B extends A {}
 ```
 
-2. Multilevel Inheritance: in this case, there are multiple level of inheritance.
+- Multilevel Inheritance: in this case, there are multiple level of inheritance.
 
 ```java
 class A {}
@@ -549,10 +549,10 @@ class B extends A {}
 class C extends B {}
 ```
 
-3. Multiple Inheritance: a single class extends more than 1 class. Java does not support this type of inheritance, because if a class extends more than one class then change of ambiguity problem if there is any method present with same name.
+- Multiple Inheritance: a single class extends more than 1 class. Java does not support this type of inheritance, because if a class extends more than one class then change of ambiguity problem if there is any method present with same name.
 However multiple inheritance is possible with interfaces.
 
-4. Hierarchical Inheritance: 
+- Hierarchical Inheritance: 
 
 ```java
 class A {}
