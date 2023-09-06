@@ -77,3 +77,26 @@ If you desire to have the outcome print "this is this", which of the following c
 - true Test
 - All of commands above have the same outcome and print "this is this"
  ---
+
+```java
+public class Test {
+    static float tax_rate =0.06F;
+    public static void main(String[] args) {
+
+        var result = 0;
+        var tax_rate = 0.05;    // Line 1
+        var price = 100;
+        var adjusted_tax = price * tax_rate;  // Line 2
+        result = price + adjusted_tax;  // Line 3
+        System.out.println("Adjusted price = " + result);
+    }
+}
+```
+What is the result of compiling and running this code?
+
+- Code runs and prints: Adjusted price = 106
+- Code runs and prints: Adjusted price = 105.00
+- Compile error occurs on Line 1
+- Compile error occurs on Line 2
+- Compile error occurs on Line 3
+---
